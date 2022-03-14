@@ -44,6 +44,7 @@ fn insert_sort_dth() {
     common::util::shuffle(&mut data);
     let len = data.len();
     sort::insert::sort_dth(&mut data, 0, len - 1, 0);
+    println!("data: {}", data);
     assert!(data.is_sorted());
 
     // 0-th char equal

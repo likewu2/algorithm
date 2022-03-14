@@ -1,0 +1,22 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+		}
+	],
+	"settings":
+	{
+		"cargo_build":
+		{
+			"variants":
+			{
+				"test":
+				{
+					"extra_run_args": "--show-output",
+					"extra_cargo_args": "-- --show-output",
+				},
+			},
+		},
+	},
+}
