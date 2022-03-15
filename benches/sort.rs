@@ -142,8 +142,9 @@ fn eq_data_merge_v3(b: &mut Bencher) {
 #[bench]
 fn small_quick(b: &mut Bencher) {
     b.iter(|| {
-        let mut numbs = [1, 2, 4, 8, 9, 9, 13, 17, 22];
+        let mut numbs = [1, 2, 4, 11, 8, 9, 9, 13, 17, 22];
         sort::quick::sort(&mut numbs);
+        println!("numbs: {:?}", numbs);
     });
 }
 

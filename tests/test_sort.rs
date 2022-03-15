@@ -39,18 +39,32 @@ case!(shell);
 case!(floyd);
 
 #[test]
+fn small_merge_v1() {
+    let mut numbs = [1, 2, 4, 8, 9, 9, 13, 17, 22];
+    sort::merge::v1::sort(&mut numbs);
+    println!("numbs: {:?}", numbs);
+}
+
+#[test]
+fn small_quick() {
+    let mut numbs = [1, 2, 4, 11, 8, 9, 9, 13, 17, 22];
+    sort::quick::sort(&mut numbs);
+    println!("numbs: {:?}", numbs);
+}
+
+#[test]
 fn insert_sort_dth() {
     let mut data = common::util::vec_alphabet(1);
     common::util::shuffle(&mut data);
     let len = data.len();
     sort::insert::sort_dth(&mut data, 0, len - 1, 0);
-    println!("data: {}", data);
     assert!(data.is_sorted());
 
     // 0-th char equal
     let mut data = vec!["af", "ae", "ad", "ac", "ab", "aa"];
     let len = data.len();
     sort::insert::sort_dth(&mut data, 0, len - 1, 0);
+    println!("data: {:?}", data);
     assert!(data.is_sorted());
 
     // length

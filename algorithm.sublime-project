@@ -16,6 +16,10 @@
 					"extra_run_args": "--show-output",
 					"extra_cargo_args": "-- --show-output",
 				},
+				"bench11":
+				{
+					"extra_cargo_args": "-- --show-output"
+				},
 			},
 		},
 	},
