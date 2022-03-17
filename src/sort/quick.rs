@@ -6,13 +6,16 @@
 //! 此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，
 //! 以此达到整个数据变成有序序列
 
+use std::fmt::Debug;
+
 pub fn sort<T>(a: &mut [T])
 where
-    T: Ord,
+    T: Ord + Debug,
 {
     let len = a.len();
     if len > 0 {
         let (l, _, r) = a.select_nth_unstable(len / 2);
+        println!("L: {:?}  R: {:?}", l, r);
         sort(l);
         sort(r)
     }

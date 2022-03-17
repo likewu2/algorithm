@@ -39,9 +39,9 @@ case!(shell);
 case!(floyd);
 
 #[test]
-fn small_merge_v1() {
-    let mut numbs = [1, 2, 4, 8, 9, 9, 13, 17, 22];
-    sort::merge::v1::sort(&mut numbs);
+fn small_merge_v2() {
+    let mut numbs = [1, 2, 88, 4, 8, 9, 9, 13, 17, 22];
+    sort::merge::v2::sort(&mut numbs);
     println!("numbs: {:?}", numbs);
 }
 
