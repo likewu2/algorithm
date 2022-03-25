@@ -39,8 +39,17 @@ case!(shell);
 case!(floyd);
 
 #[test]
+fn small_bubble() {
+    let mut numbs = [1, 2, 4, 11, 8, 9, 9, 13, 17, 22];
+    println!("numbs: {:?}", numbs);
+    sort::bubble::sort(&mut numbs);
+    println!("numbs: {:?}", numbs);
+}
+
+#[test]
 fn small_merge_v2() {
     let mut numbs = [1, 2, 88, 4, 8, 9, 9, 13, 17, 22];
+    println!("numbs: {:?}", numbs);
     sort::merge::v2::sort(&mut numbs);
     println!("numbs: {:?}", numbs);
 }
@@ -48,7 +57,16 @@ fn small_merge_v2() {
 #[test]
 fn small_quick() {
     let mut numbs = [1, 2, 4, 11, 8, 9, 9, 13, 17, 22];
+    println!("numbs: {:?}", numbs);
     sort::quick::sort(&mut numbs);
+    println!("numbs: {:?}", numbs);
+}
+
+#[test]
+fn small_heap() {
+    let mut numbs = [1, 2, 4, 11, 8, 9, 9, 13, 17, 22];
+    println!("numbs: {:?}", numbs);
+    sort::floyd::sort(&mut numbs);
     println!("numbs: {:?}", numbs);
 }
 

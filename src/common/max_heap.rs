@@ -12,6 +12,7 @@
 //! 顶部保存最小元素的堆为最小堆，顶部保存最大元素的堆为最大堆
 
 use crate::common::binary_tree;
+use std::fmt::Debug;
 
 /// 用数组实现隐式二叉堆 (最大堆)
 pub struct BinaryHeap<K> {
@@ -20,7 +21,7 @@ pub struct BinaryHeap<K> {
 
 impl<K> BinaryHeap<K>
 where
-    K: Ord,
+    K: Ord + Debug,
 {
     pub fn new(mut keys: Vec<K>) -> Self {
         build_heap(&mut keys);
@@ -99,7 +100,7 @@ where
 
 pub fn build_heap<K>(keys: &mut [K])
 where
-    K: Ord,
+    K: Ord + Debug,
 {
     // i以 n / 2作为第一个分支节点，开始构建heap。
     // 因为叶子结点，已经满足堆定义，所以从二叉树倒数第二层最后一个节点

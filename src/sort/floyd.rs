@@ -7,18 +7,21 @@
 ///
 /// 就地排序，小 -> 大
 use crate::common::max_heap;
+use std::fmt::Debug;
 
 pub fn sort<T>(a: &mut [T])
 where
-    T: Ord,
+    T: Ord + Debug,
 {
     // 构建最大堆
     max_heap::build_heap(a);
+    println!("a: {:?}", a);
 
     let mut i = a.len();
     while i > 1 {
         i -= 1;
         a.swap(0, i);
         max_heap::heapify(&mut a[0..i], 0);
+        println!("a: {:?}", a);
     }
 }

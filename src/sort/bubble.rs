@@ -10,9 +10,11 @@
 //! 上浮到顶端一样，故名“冒泡排序”。
 //!
 
+use std::fmt::Debug;
+
 pub fn sort<T>(a: &mut [T])
 where
-    T: Ord,
+    T: Ord + Debug,
 {
     let len = a.len();
     for i in 0..len.saturating_sub(1) {
@@ -24,6 +26,8 @@ where
                 swapped = true;
             }
         }
+
+        println!("a: {:?}", a);
 
         if !swapped {
             break;

@@ -16,3 +16,5 @@ pub mod search;
 pub mod sort;
 pub mod strings;
 pub mod tree;
+
+pub mod my;
