@@ -38,3 +38,20 @@ pub fn sum_root_to_leaf(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
   }
   helper(root, 0)
 }
+
+pub fn sum_root_to_leaf2(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+  fn helper(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> i32 {
+    match root {
+        Some(node) => {
+            let ans = val * 10 + node.borrow().val;
+            if node.borrow().left.is_none() && node.borrow().right.is_none() {
+              ans
+            } else {
+              helper(node.borrow().left.clone(), ans) + helper(node.borrow().right.clone(), ans)
+            }
+        }
+        _ => 0
+    }
+  }
+  helper(root, 0)
+}
