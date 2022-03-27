@@ -24,7 +24,7 @@ impl TreeNode {
 }
 
 
-pub fn sum_root_to_leaf(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+pub fn sum_root_to_leaf1(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
   fn helper(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> i32 {
     match root {
         Some(node) => match node.borrow_mut() {
@@ -43,11 +43,17 @@ pub fn sum_root_to_leaf2(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
   fn helper(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> i32 {
     match root {
         Some(node) => {
-            let ans = val * 10 + node.borrow().val;
+            //let ans = val * 10 + node.borrow().val;  //error
+            let ans = val + node.borrow().val;
             if node.borrow().left.is_none() && node.borrow().right.is_none() {
               ans
+            } else if node.borrow().left.is_none() {
+              helper(node.borrow().right.clone(), ans)
+            } else if node.borrow().right.is_none() {
+              helper(node.borrow().left.clone(), ans)
             } else {
-              helper(node.borrow().left.clone(), ans) + helper(node.borrow().right.clone(), ans)
+              //helper(node.borrow().left.clone(), ans) + helper(node.borrow().right.clone(), ans)
+              helper(node.borrow().left.clone(), 0) + helper(node.borrow().right.clone(), 0) + ans
             }
         }
         _ => 0

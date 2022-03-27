@@ -7,7 +7,7 @@ use algo::my::{self,tree_sum::TreeNode,merge_list::ListNode};
 
 #[test]
 fn small_tree_sum() {
-    let a = Rc::new(RefCell::new(TreeNode::new(1)));
+    let a = Rc::new(RefCell::new(TreeNode::new(11)));
     let b = Rc::new(RefCell::new(TreeNode::new(0)));
     let c = Rc::new(RefCell::new(TreeNode::new(1)));
     
@@ -19,7 +19,7 @@ fn small_tree_sum() {
     //println!("d: {:?}", d.borrow_mut());
 
     //println!("a: {}, b: {}, c: {}", Rc::strong_count(&a), Rc::strong_count(&b), Rc::strong_count(&c));
-    let sum=my::tree_sum::sum_root_to_leaf(Some(a));
+    let sum=my::tree_sum::sum_root_to_leaf2(Some(a));
     println!("sum: {:?}", sum);
 }
 
@@ -38,4 +38,20 @@ fn small_merge_two_lists() {
     if let Some(sum)=my::merge_list::merge_two_lists(Some(a), Some(h)) {
       println!("sum: {:?}", sum);
     }
+}
+
+#[test]
+fn test11() {
+  let mut a=[1,2,3,4];
+  a[0]=11;
+  //a[4]=21;
+  println!("{:?}", a);
+}
+
+#[test]
+fn test12() {
+  let mut a=RefCell::new([1,2,3,4]);
+  a.borrow_mut()[0]=11;
+  //a.borrow_mut()[4]=21;
+  println!("{:?}", a);
 }
