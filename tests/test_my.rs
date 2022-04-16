@@ -40,6 +40,18 @@ fn small_merge_two_lists() {
     }
 }
 
+
+#[test]
+fn small_intersect_list() {
+    let mut a = vec![1, 4, 5, 7, 11, 3, 9, 13];
+    let mut b = vec![4, 7, 10, 8, 2, 11];
+
+    if let Some(intersect)=my::intersect_list::intersect_list(Some(a), Some(b)) {
+      println!("sum: {:?}", intersect);
+    }
+}
+
+
 #[test]
 fn test11() {
   let mut a=[1,2,3,4];
