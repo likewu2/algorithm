@@ -20,6 +20,7 @@ pub fn intersect_list(l1: Option<Vec<i32>>, l2: Option<Vec<i32>>) -> Option<Vec<
               }
             }
           }
+          println!("m0: {:?}", m0);
           Some(n3)
         }
         (Some(n1), None) => Some(n1.clone()),

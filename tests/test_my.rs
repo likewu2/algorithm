@@ -47,7 +47,7 @@ fn small_intersect_list() {
     let mut a = vec![1, 4, 5, 7, 11, 3, 9, 13];
     let mut b = vec![4, 7, 10, 8, 2, 11];
 
-    if let Some(intersect)=my::intersect_list::intersect_list(Some(a), Some(b)) {
+    if let Some(intersect)=my::intersect_list2::intersect_list(Some(a), Some(b)) {
       println!("sum: {:?}", intersect);
     }
 }
