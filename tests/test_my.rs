@@ -2,6 +2,7 @@
 
 use std::cell::RefCell;
 use std::rc::Rc;
+use std::collections::HashMap;
 
 use algo::my::{self,tree_sum::TreeNode,merge_list::ListNode};
 
@@ -66,4 +67,11 @@ fn test12() {
   a.borrow_mut()[0]=11;
   //a.borrow_mut()[4]=21;
   println!("{:?}", a);
+}
+
+#[test]
+fn test13() {
+  let mut m0: HashMap<i32, i32> = HashMap::new();
+  m0.insert(2, 1);
+  println!("{:?}", m0);
 }
