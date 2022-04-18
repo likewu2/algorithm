@@ -4,7 +4,7 @@ use std::cell::RefCell;
 use std::rc::Rc;
 use std::collections::HashMap;
 
-use algo::my::{self,tree_sum::TreeNode,merge_list::ListNode};
+use algo::my::{self,tree_sum::TreeNode,merge_list,add_list,add_list::ListNodePtr};
 
 #[test]
 fn small_tree_sum() {
@@ -26,19 +26,29 @@ fn small_tree_sum() {
 
 #[test]
 fn small_merge_two_lists() {
-    let mut a = Box::new(ListNode::new(6));
-    let mut b = Box::new(ListNode::new(14));
-    let mut c = Box::new(ListNode::new(17));
+    let mut a = Box::new(merge_list::ListNode::new(6));
+    let mut b = Box::new(merge_list::ListNode::new(14));
+    let mut c = Box::new(merge_list::ListNode::new(17));
     b.next=Some(c);
     a.next=Some(b);
 
-    let mut h = Box::new(ListNode::new(11));
-    let mut i = Box::new(ListNode::new(24));
+    let mut h = Box::new(merge_list::ListNode::new(11));
+    let mut i = Box::new(merge_list::ListNode::new(24));
     h.next=Some(i);
 
     if let Some(sum)=my::merge_list::merge_two_lists(Some(a), Some(h)) {
       println!("sum: {:?}", sum);
     }
+}
+
+
+#[test]
+fn small_add_two_lists() {
+    let mut a = add_list::ListNode::from_vec(vec![1,2,3,4]);
+    let mut b = add_list::ListNode::from_vec(vec![2,3,4]);
+
+    let sum = add_list::ListNode::to_vec(my::add_list::add_two_lists(a, b));
+    println!("sum: {:?}", sum);
 }
 
 
