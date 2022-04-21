@@ -5,6 +5,7 @@
 //! Warning: supports only the basic multilingual plane (BMP), i.e,
 //!          Unicode characters between U+0000 and U+FFFF.
 use std::convert::TryFrom;
+use lazy_static::lazy_static;
 
 // const MAX_VALUE: usize = char::MAX as usize;
 const MAX_VALUE: usize = 65535;

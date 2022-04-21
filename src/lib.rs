@@ -1,10 +1,10 @@
-#![feature(iter_partition_in_place)]
-#![feature(stmt_expr_attributes)]
-#![feature(test)]
-extern crate test;
+//#![feature(iter_partition_in_place)]
+//#![feature(stmt_expr_attributes)]
+//#![feature(test)]
+//extern crate test;
 
-#[macro_use]
-extern crate lazy_static;
+//#[macro_use]
+//extern crate lazy_static;
 
 pub mod common;
 pub mod dp;
